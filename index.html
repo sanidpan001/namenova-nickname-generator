@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NameNova — Stylish Nickname &amp; Username Generator for Gaming, Instagram &amp; Free Fire</title>
+<meta name="description" content="NameNova is a free nickname & username generator: stylish Unicode fancy text, gamer tags, aesthetic handles, vibe filters (aesthetic, brutal, cyberpunk, cute, dark), platform presets for Instagram, TikTok, Discord & Free Fire, one-click copy and favorites.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        blush: '#FDF2F8',
+        novapink: '#BE185D',
+        novapinkdark: '#9D174D',
+        novaink: '#500724',
+        novapeach: '#FCE7F3',
+        novayellow: '#FEF3C7',
+      },
+      fontFamily: {
+        display: ['"Trebuchet MS"','"Comic Sans MS"','cursive','sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { background:#FDF2F8; color:#500724; }
+  .sticker { box-shadow: 4px 4px 0 #500724; }
+  .sticker-sm { box-shadow: 3px 3px 0 #500724; }
+  .sticker-xs { box-shadow: 2px 2px 0 #500724; }
+  .name-card { transition: transform .15s ease, box-shadow .15s ease; }
+  .name-card:hover { transform: translateY(-3px) rotate(-0.4deg); }
+  .wiggle { animation: wiggle 3.2s ease-in-out infinite; }
+  @keyframes wiggle { 0%,100%{transform:rotate(-2deg)} 50%{transform:rotate(2deg)} }
+  .float-slow { animation: floaty 5s ease-in-out infinite; }
+  @keyframes floaty { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .pill-active { background:#BE185D !important; color:#fff !important; border-color:#500724 !important; }
+  .no-print {}
+  .toast-pop { animation: toastpop .25s ease; }
+  @keyframes toastpop { from{transform:scale(.8);opacity:0} to{transform:scale(1);opacity:1} }
+  ::selection { background:#BE185D; color:#fff; }
+</style>
+</head>
+<body class="min-h-screen font-display">
+
+<!-- Sticky header -->
+<header class="sticky top-0 z-50 bg-[#FDF2F8]/95 backdrop-blur border-b-2 border-[#500724]">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-3 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#BE185D] text-white text-xl sticker-xs -rotate-6">✨</span>
+      <span class="text-2xl font-black tracking-tight text-[#500724]">Name<span class="text-[#BE185D]">Nova</span></span>
+      <span class="hidden sm:inline-block text-[10px] font-bold uppercase tracking-widest bg-[#FEF3C7] text-[#500724] border-2 border-[#500724] rounded-full px-2 py-0.5 rotate-3 sticker-xs ml-1">sticker lab</span>
+    </a>
+    <nav class="flex items-center gap-2 sm:gap-4 text-sm font-bold">
+      <a href="#top" class="px-3 py-1.5 rounded-full border-2 border-transparent hover:border-[#500724] hover:bg-white transition">Home</a>
+      <a href="https://fixoraa.tech" class="px-3 py-1.5 rounded-full bg-[#BE185D] text-white border-2 border-[#500724] sticker-xs hover:bg-[#9D174D] transition">More Tools</a>
+    </nav>
+  </div>
+</header>
+
+<!-- TOP AD -->
+<div class="no-print mx-auto max-w-6xl px-4 sm:px-6 pt-4" role="complementary" aria-label="Advertisement">
+  <div class="mx-auto text-center" style="max-width:728px">
+    <span class="block text-[10px] tracking-[0.18em] uppercase text-slate-400 mb-1.5">Advertisement</span>
+    <div class="flex justify-center overflow-hidden">
+      <div class="origin-top scale-[0.44] sm:scale-100 shrink-0">
+        <script>
+          atOptions = { 'key' : '4e68ac77881c17fe128a46565d9a4e8c', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
+        </script>
+        <script src="https://www.highrevenueformat.com/4e68ac77881c17fe128a46565d9a4e8c/invoke.js"></script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-2 text-center relative">
+  <div class="absolute left-6 top-6 hidden md:block float-slow text-4xl select-none" aria-hidden="true">⭐</div>
+  <div class="absolute right-10 top-16 hidden md:block float-slow text-4xl select-none" style="animation-delay:1.2s" aria-hidden="true">🎮</div>
+  <div class="absolute left-16 bottom-0 hidden md:block float-slow text-3xl select-none" style="animation-delay:2s" aria-hidden="true">💖</div>
+  <span class="inline-flex items-center gap-2 bg-white border-2 border-[#500724] rounded-full px-4 py-1.5 text-xs font-black uppercase tracking-widest sticker-sm rotate-1">
+    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Unlimited Free Usage · No Signup · No Paywall
+  </span>
+  <h1 class="mt-4 text-4xl sm:text-5xl md:text-6xl font-black leading-tight">
+    Cook up a <span class="text-[#BE185D] relative inline-block">nickname
+      <svg class="absolute -bottom-2 left-0 w-full" height="10" viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 Q 100 -2 198 6" stroke="#BE185D" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+    </span> that<br class="sm:hidden"> actually sticks
+  </h1>
+  <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg font-medium text-[#500724]/80">
+    Stylish gamer tags, aesthetic handles, and decorative Unicode names for Instagram, TikTok, Discord, Free Fire &amp; PUBG — generated in one click, copied in another.
+  </p>
+  <div class="mt-5 flex flex-wrap justify-center gap-2 text-xs font-bold">
+    <span class="bg-[#FEF3C7] border-2 border-[#500724] rounded-full px-3 py-1 sticker-xs -rotate-2">⚡ 8 fancy text styles</span>
+    <span class="bg-white border-2 border-[#500724] rounded-full px-3 py-1 sticker-xs rotate-2">🎭 5 vibe filters</span>
+    <span class="bg-[#FCE7F3] border-2 border-[#500724] rounded-full px-3 py-1 sticker-xs -rotate-1">🎯 5 platform presets</span>
+    <span class="bg-white border-2 border-[#500724] rounded-full px-3 py-1 sticker-xs rotate-1">⭐ favorites saved</span>
+  </div>
+</section>
+
+<!-- Generator panel -->
+<main class="mx-auto max-w-6xl px-4 sm:px-6 py-8">
+  <section id="generator" class="relative bg-white border-[3px] border-[#500724] rounded-3xl p-5 sm:p-8 sticker">
+    <span class="absolute -top-4 -left-2 bg-[#BE185D] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full border-2 border-[#500724] sticker-xs -rotate-6">Name machine</span>
+    <span class="absolute -top-3 right-8 bg-[#FEF3C7] text-[#500724] text-xs font-black px-3 py-1 rounded-full border-2 border-[#500724] sticker-xs rotate-3">100% free</span>
+
+    <!-- Mode tabs -->
+    <div class="flex flex-wrap gap-2 mt-2" role="tablist" aria-label="Generation mode">
+      <button data-mode="keyword" class="mode-tab pill-active text-sm font-black px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition" role="tab" aria-selected="true">🔤 From a keyword</button>
+      <button data-mode="blend" class="mode-tab text-sm font-black px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition" role="tab" aria-selected="false">💥 Blend two words</button>
+      <button data-mode="random" class="mode-tab text-sm font-black px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition" role="tab" aria-selected="false">🎲 Random from scratch</button>
+    </div>
+
+    <!-- Inputs -->
+    <div class="mt-5 grid sm:grid-cols-2 gap-4">
+      <div id="kw1-wrap">
+        <label for="keyword" class="block text-sm font-black uppercase tracking-wide mb-1.5">Your keyword</label>
+        <input id="keyword" type="text" maxlength="24" placeholder="e.g. shadow, nova, pixel…" autocomplete="off"
+          class="w-full text-lg font-bold px-4 py-3 rounded-2xl border-[3px] border-[#500724] bg-[#FDF2F8] placeholder:text-[#500724]/35 focus:outline-none focus:ring-4 focus:ring-[#BE185D]/30">
+        <p class="text-xs mt-1 text-[#500724]/60 font-semibold">Tip: short words (3–10 letters) make the catchiest handles.</p>
+      </div>
+      <div id="kw2-wrap" class="hidden">
+        <label for="keyword2" class="block text-sm font-black uppercase tracking-wide mb-1.5">Second keyword</label>
+        <input id="keyword2" type="text" maxlength="24" placeholder="e.g. wolf, queen, storm…" autocomplete="off"
+          class="w-full text-lg font-bold px-4 py-3 rounded-2xl border-[3px] border-[#500724] bg-[#FDF2F8] placeholder:text-[#500724]/35 focus:outline-none focus:ring-4 focus:ring-[#BE185D]/30">
+        <p class="text-xs mt-1 text-[#500724]/60 font-semibold">We fuse them: shadow + wolf → ShadowWolf, Shalf, WolfShadow…</p>
+      </div>
+    </div>
+
+    <!-- Platform presets -->
+    <div class="mt-6">
+      <p class="text-sm font-black uppercase tracking-wide mb-2">🎯 Platform preset <span class="normal-case font-semibold text-[#500724]/60">(changes rules &amp; decorations)</span></p>
+      <div class="flex flex-wrap gap-2" id="platform-pills" role="group" aria-label="Platform preset">
+        <button data-platform="instagram" class="plat-pill pill-active text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">📸 Instagram</button>
+        <button data-platform="tiktok" class="plat-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">🎵 TikTok</button>
+        <button data-platform="discord" class="plat-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">💬 Discord</button>
+        <button data-platform="gaming" class="plat-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">🎮 Gaming / PUBG</button>
+        <button data-platform="freefire" class="plat-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">🔥 Free Fire</button>
+      </div>
+      <p id="platform-note" class="text-xs mt-2 font-semibold text-[#500724]/70 bg-[#FCE7F3] border-2 border-dashed border-[#BE185D]/50 rounded-xl px-3 py-2"></p>
+    </div>
+
+    <!-- Vibe filters -->
+    <div class="mt-5">
+      <p class="text-sm font-black uppercase tracking-wide mb-2">🎭 Vibe filter</p>
+      <div class="flex flex-wrap gap-2" id="vibe-pills" role="group" aria-label="Vibe filter">
+        <button data-vibe="any" class="vibe-pill pill-active text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">✨ Any vibe</button>
+        <button data-vibe="aesthetic" class="vibe-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">🌙 Aesthetic</button>
+        <button data-vibe="brutal" class="vibe-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">💀 Brutal</button>
+        <button data-vibe="cyberpunk" class="vibe-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">⚡ Cyberpunk</button>
+        <button data-vibe="cute" class="vibe-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">🧸 Cute</button>
+        <button data-vibe="dark" class="vibe-pill text-sm font-bold px-4 py-2 rounded-full border-2 border-[#500724] bg-white sticker-xs transition">🌑 Dark</button>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="mt-6 flex flex-wrap items-center gap-3">
+      <button id="generate-btn" class="wiggle text-lg font-black bg-[#BE185D] text-white px-8 py-3.5 rounded-2xl border-[3px] border-[#500724] sticker hover:bg-[#9D174D] transition">✨ Generate names</button>
+      <button id="shuffle-btn" class="text-sm font-black bg-[#FEF3C7] px-5 py-3 rounded-2xl border-[3px] border-[#500724] sticker-sm hover:bg-[#FDE68A] transition">🔀 Shuffle</button>
+      <span id="count-note" class="text-xs font-bold text-[#500724]/60"></span>
+    </div>
+
+    <!-- Results -->
+    <div class="mt-6">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-xl font-black">Your names <span id="results-count" class="text-sm font-bold text-[#BE185D]"></span></h2>
+        <button id="copy-all-btn" class="hidden text-xs font-black bg-white px-3 py-1.5 rounded-full border-2 border-[#500724] sticker-xs hover:bg-[#FCE7F3] transition">📋 Copy all</button>
+      </div>
+      <div id="empty-state" class="text-center py-10 border-[3px] border-dashed border-[#BE185D]/40 rounded-2xl bg-[#FDF2F8]">
+        <div class="text-5xl mb-3">🌸</div>
+        <p class="font-black text-lg">Your sticker sheet is empty</p>
+        <p class="text-sm text-[#500724]/60 font-semibold mt-1">Type a keyword (or go random) and hit <b>Generate names</b>.</p>
+      </div>
+      <div id="results-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+    </div>
+  </section>
+
+  <!-- Fancy Unicode styles -->
+  <section class="mt-10 relative bg-white border-[3px] border-[#500724] rounded-3xl p-5 sm:p-8 sticker">
+    <span class="absolute -top-4 left-6 bg-[#BE185D] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full border-2 border-[#500724] sticker-xs rotate-2">Unicode lab</span>
+    <div class="mt-2 flex flex-col sm:flex-row sm:items-center gap-3">
+      <div class="flex-1">
+        <h2 class="text-2xl font-black">Fancy-text styles <span class="text-sm font-bold text-[#BE185D]">· 8 styles</span></h2>
+        <p class="text-sm font-semibold text-[#500724]/70 mt-1">Type once, get your word in 8 decorative Unicode styles. They paste anywhere that accepts text — Instagram bios, Free Fire names, Discord.</p>
+      </div>
+      <input id="fancy-input" type="text" maxlength="30" placeholder="type here…" autocomplete="off"
+        class="sm:w-64 text-lg font-bold px-4 py-2.5 rounded-2xl border-[3px] border-[#500724] bg-[#FDF2F8] placeholder:text-[#500724]/35 focus:outline-none focus:ring-4 focus:ring-[#BE185D]/30">
+    </div>
+    <div id="fancy-grid" class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+    <p class="mt-4 text-xs font-semibold text-[#500724]/60 bg-[#FEF3C7] border-2 border-dashed border-[#BE185D]/40 rounded-xl px-3 py-2">
+      ⚠️ <b>Heads-up:</b> fancy styles use special Unicode characters. Instagram <i>usernames</i> don't allow them (use them in your display name / bio instead), and very old phones may show boxes for a few styles.
+    </p>
+  </section>
+
+  <!-- Favorites -->
+  <section class="mt-10 relative bg-[#500724] text-white border-[3px] border-[#500724] rounded-3xl p-5 sm:p-8 sticker">
+    <span class="absolute -top-4 right-6 bg-[#FEF3C7] text-[#500724] text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full border-2 border-[#500724] sticker-xs -rotate-2">saved on this device</span>
+    <h2 class="text-2xl font-black mt-2">⭐ Your favorites</h2>
+    <p class="text-sm font-semibold text-white/70 mt-1">Tap the ⭐ on any name to pin it here. Stored in your browser — no account needed.</p>
+    <div id="favs-wrap" class="mt-4">
+      <p id="favs-empty" class="text-white/50 font-semibold text-sm border-2 border-dashed border-white/30 rounded-2xl px-4 py-6 text-center">Nothing pinned yet — star the names you love.</p>
+      <div id="favs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+    </div>
+  </section>
+
+  <!-- How it works mini-strip -->
+  <section class="mt-10 grid sm:grid-cols-3 gap-4">
+    <div class="bg-white border-[3px] border-[#500724] rounded-2xl p-5 sticker-sm -rotate-1">
+      <div class="text-3xl mb-2">⌨️</div>
+      <h3 class="font-black text-lg">1 · Type or blend</h3>
+      <p class="text-sm font-semibold text-[#500724]/70 mt-1">Enter one keyword, fuse two words together, or let the syllable engine invent something from scratch.</p>
+    </div>
+    <div class="bg-white border-[3px] border-[#500724] rounded-2xl p-5 sticker-sm rotate-1">
+      <div class="text-3xl mb-2">🎯</div>
+      <h3 class="font-black text-lg">2 · Pick a lane</h3>
+      <p class="text-sm font-semibold text-[#500724]/70 mt-1">Platform presets enforce each site's rules (Instagram's 30-char, letters-only limit and friends) while vibe filters set the mood.</p>
+    </div>
+    <div class="bg-white border-[3px] border-[#500724] rounded-2xl p-5 sticker-sm -rotate-1">
+      <div class="text-3xl mb-2">📋</div>
+      <h3 class="font-black text-lg">3 · Copy &amp; star</h3>
+      <p class="text-sm font-semibold text-[#500724]/70 mt-1">One click copies any name. Star your keepers — they live in your browser, free forever.</p>
+    </div>
+  </section>
+</main>
+
+<!-- BOTTOM AD -->
+<div class="no-print mx-auto max-w-6xl px-4 sm:px-6 pb-4" role="complementary" aria-label="Advertisement">
+  <div class="mx-auto text-center" style="max-width:728px">
+    <span class="block text-[10px] tracking-[0.18em] uppercase text-slate-400 mb-1.5">Advertisement</span>
+    <div class="flex justify-center overflow-hidden">
+      <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="464498"></script>
+    </div>
+  </div>
+</div>
+
+<!-- SEO article + FAQs -->
+<section class="mx-auto max-w-6xl px-4 sm:px-6 pb-10">
+  <article class="bg-white border-[3px] border-[#500724] rounded-3xl p-6 sm:p-10 sticker prose-headings">
+    <span class="inline-block bg-[#FEF3C7] border-2 border-[#500724] rounded-full px-3 py-1 text-xs font-black uppercase tracking-widest sticker-xs -rotate-1 mb-4">The complete guide</span>
+    <h2 class="text-3xl sm:text-4xl font-black mb-6">The Ultimate Guide to Nicknames &amp; Usernames: How to Pick a Name That Actually Sticks</h2>
+
+    <h3 class="text-xl font-black mt-8 mb-3">Why your username matters more than you think</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Your username is the first thing anyone sees before they know anything about you. In a game lobby it is the name your teammates shout when they need backup. On Instagram it sits at the top of your profile, right next to your photo, and it is the string people type when they want to find you. On Discord it is how a whole server remembers you. Psychologists call this a "thin slice" judgment: people form an impression of you in seconds from tiny cues, and your handle is one of the biggest cues you control. A name like <b>moonlitpixels</b> tells a completely different story than <b>xX_ShadowReaper_Xx</b>, even if both belong to the same person. The good news is that picking a great name is a skill, not luck — and once you understand the ingredients, you can generate dozens of strong options in minutes.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">What makes a nickname great? The five ingredients</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Great handles share five traits. First, <b>memorability</b>: short, rhythmic names stick. Two syllables beat five; alliteration helps (PixelPanda is easier to recall than XxDarkLordOfShadowsxX). Second, <b>pronounceability</b>: if your teammates cannot say it in voice chat, it will get shortened into something you did not choose. Third, <b>uniqueness</b>: the name should be rare enough that it is actually available when you try to claim it. Fourth, <b>platform fit</b>: a name that works on Free Fire, where decorative Unicode is welcome, may be illegal on Instagram, which only allows letters, numbers, periods, and underscores. Fifth, <b>personality</b>: the name should feel like you — aesthetic, brutal, cute, dark, or cyberpunk. Miss any one of these and the name quietly fails: unmemorable names get forgotten, unpronounceable names get mangled, taken names frustrate you, platform-mismatched names get rejected at signup, and personality-mismatched names just feel wrong after a week.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">Gaming handles: how pro players think about names</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Competitive gaming has its own naming culture. Short tags dominate because they are readable at a glance on a kill feed — think of how quickly you parse "Nova" versus "TheUnstoppableDestroyerOfWorlds" mid-fight. Many players build handles from a <b>core word plus a modifier</b>: a noun that carries the vibe (wolf, ghost, pixel, storm) plus a prefix or suffix that makes it theirs (neo, vx, _gg, 07). Clan tags add another layer: a 2–4 character tag in front of the name, like [NOVA] or Nv丨, signals belonging. In battle-royale games like Free Fire and PUBG Mobile, decorative Unicode is a status symbol — frames like ꧁༒…༒꧂ or ★彡…彡★ around a name make it pop in the lobby list, and stylized alphabets (bold, script, double-struck) turn an ordinary word into a logo. One caution: some competitive titles restrict special characters in official tournaments, so keep a clean ASCII version of your tag as a backup.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">Aesthetic usernames: the soft-power trend</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Aesthetic handles are the opposite of aggressive gamer tags: lowercase, soft, and deliberate. Names like <b>cloudtea</b>, <b>moonlitdreams</b>, or <b>petal.exe</b> read like poetry rather than warnings. The aesthetic formula is simple — combine a gentle nature or mood word (moon, cloud, velvet, petal, rain) with an everyday or dreamy second word (tea, dreams, hours, static) — and keep everything lowercase with minimal decoration. Symbols, when used, are light: ˚, ✧, ｡, ♡. This style dominates Instagram, TikTok, and Pinterest because it photographs well in bios and looks intentional next to curated feeds. Aesthetic names age gracefully too: while an edgy "edgelord" tag can feel embarrassing a year later, a soft name like <b>softstatic</b> rarely does. If you want a personal brand that lasts, aesthetic is the safest long-term bet.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">Platform rules you must know before you fall in love with a name</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Every platform enforces its own username grammar, and generating a name without knowing the rules is how you end up heartbroken at the signup screen. <b>Instagram</b> allows only letters, numbers, periods, and underscores, with a maximum of 30 characters — no fancy Unicode fonts in the handle itself (though your <i>display name</i> can use them freely). <b>TikTok</b> is similar but caps handles at 24 characters. <b>Discord</b> usernames must be 2–32 characters, lowercase, limited to letters, numbers, underscores, and periods. <b>Free Fire</b> is the most permissive: short names (around 12 characters display best) with decorative Unicode symbols and stylized alphabets fully welcome — that is where ꧁༒, ☬, and ★彡 shine. <b>PUBG Mobile</b> sits in the middle: symbols are allowed but the rename card costs in-game currency, so players tend to choose carefully. The practical move is to generate a "clean" base name first, then decorate a copy for the platforms that allow it — which is exactly what NameNova's platform presets do automatically.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">Fancy Unicode text: how the magic trick works</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Those stylish fonts you see in bios — 𝐛𝐨𝐥𝐝, 𝘪𝘵𝘢𝘭𝘪𝘤, 𝓼𝓬𝓻𝓲𝓹𝓽, 𝕕𝕠𝕦𝕓𝕝𝕖-𝕤𝕥𝕣𝕦𝕔𝕜, Ⓒⓘⓡⓒⓛⓔⓓ — are not fonts at all. They are different Unicode characters that happen to look like styled letters. Unicode, the global standard behind every character on your screen, includes entire alphabets from mathematics (bold, italic, script, double-struck), enclosed characters (circled letters), full-width forms from East Asian typography, and phonetic symbols that double as small capitals. A fancy-text generator simply swaps each letter you type for its styled twin using a lookup table — pure character mapping, no images, no fonts installed. That is why the result pastes anywhere plain text works. Two caveats worth knowing: screen readers may read styled text letter-by-letter oddly, and a few older devices render rare styles as empty boxes, so always preview on your own phone before committing to a bio.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">The blending method: fusing two words into one handle</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Some of the most original handles come from <b>blending</b>: taking two words you like and fusing them. Shadow + wolf gives you ShadowWolf, but also WolfShadow, Shalf (first half of one, second half of the other), Woadow, ShadWolf, and separator versions like shadow.wolf or shadowxwolf. Blending works because it multiplies a small vocabulary into a huge possibility space — two favorite words can yield eight or more distinct handles, and the odd fusions (Shalf, Voltrex) often sound the most like invented brand names. This is the same technique startups use to coin product names, and it is why a blender tool beats a plain word list: it creates names that feel designed rather than picked. When blending, keep the total under 12–14 characters so the result stays punchy, and say it out loud — if it trips your tongue, your teammates will trip over it too.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">Vibes as a design system: aesthetic, brutal, cyberpunk, cute, dark</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Thinking in vibes turns name generation from random guessing into directed design. Each vibe is really a small language: its own word bank, its own symbols, its own decoration rules. <b>Aesthetic</b> speaks in moon, velvet, cloud, and ♡; <b>brutal</b> in savage, krush, and ☠; <b>cyberpunk</b> in neo, glitch, volt, and ⚡; <b>cute</b> in mochi, bunny, peachy, and ✿; <b>dark</b> in void, eclipse, and ☾. When every generated name draws from one vibe's vocabulary, the results feel coherent instead of chaotic — you get twenty names that all belong to the same world, which makes choosing dramatically easier. This is also how you stay consistent across platforms: pick one vibe, generate an Instagram-safe version, a decorated Free Fire version, and a Discord version, and your whole online identity rhymes without being identical.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">Availability: what to do when your dream name is taken</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">The perfect name is worthless if someone claimed it in 2014. Short, clean handles on big platforms are overwhelmingly taken, so professionals plan for it. The classic rescue moves: add a tasteful suffix (_gg, .exe, 07, _hq), prepend a short modifier (the, neo, vx), swap a separator (shadow_wolf → shadow.wolf), or blend in a second word so the result is genuinely novel. Numbers work best when they mean something — a birth year, a lucky number, a jersey number — rather than a random string that looks like a default suggestion. Another underused trick: check the name as a <i>display name</i> even when the handle is taken; on Instagram and TikTok the display name is what most people actually read, and it has far looser rules. Finally, generate in batches: twenty candidates give you options when your top three are gone, which is why one-click regeneration matters more than it sounds.</p>
+
+    <h3 class="text-xl font-black mt-8 mb-3">Putting it all together: a 5-minute naming workflow</h3>
+    <p class="font-medium text-[#500724]/85 leading-relaxed mb-4">Here is the workflow this page is built around. <b>Minute one:</b> type a keyword you like — a noun, a mood, anything — or pick two words to blend, or go fully random and let the syllable engine surprise you. <b>Minute two:</b> choose your platform preset so every suggestion obeys that site's real rules, and pick a vibe so the batch feels coherent. <b>Minute three:</b> generate, and shuffle until a few names make you smile — star them so you do not lose them. <b>Minute four:</b> run your finalists through the fancy-text lab if the platform allows decoration, and copy the exact strings. <b>Minute five:</b> try claiming them on the platform; keep your starred list open so plan B is one tap away. Total cost: zero, no account, no watermark on anything you copy. Your next legendary handle is about five minutes away — start with the generator at the top of this page.</p>
+  </article>
+
+  <!-- FAQs -->
+  <div class="mt-10 bg-white border-[3px] border-[#500724] rounded-3xl p-6 sm:p-10 sticker">
+    <span class="inline-block bg-[#FCE7F3] border-2 border-[#500724] rounded-full px-3 py-1 text-xs font-black uppercase tracking-widest sticker-xs rotate-1 mb-4">FAQ</span>
+    <h2 class="text-3xl font-black mb-6">Frequently asked questions</h2>
+    <div class="space-y-3">
+      <details class="border-2 border-[#500724] rounded-2xl bg-[#FDF2F8] px-5 py-4 sticker-xs">
+        <summary class="font-black cursor-pointer text-lg">What is a nickname generator and how does NameNova work?</summary>
+        <p class="mt-2 font-medium text-[#500724]/80 leading-relaxed">A nickname generator creates stylish usernames and gamer tags from a keyword, two blended words, or completely from scratch. NameNova combines your input with curated word banks for five vibes (aesthetic, brutal, cyberpunk, cute, dark), applies real platform rules (like Instagram's letters-numbers-periods-underscores limit), and optionally decorates results with Unicode fancy text and symbols. Everything runs in your browser — type, generate, copy, done.</p>
+      </details>
+      <details class="border-2 border-[#500724] rounded-2xl bg-[#FDF2F8] px-5 py-4 sticker-xs">
+        <summary class="font-black cursor-pointer text-lg">Can I use these usernames on Instagram?</summary>
+        <p class="mt-2 font-medium text-[#500724]/80 leading-relaxed">Yes — switch on the Instagram preset and every generated name will only use letters, numbers, periods, and underscores, capped at 30 characters, which is exactly what Instagram allows. Note that Instagram handles cannot use fancy Unicode fonts; save those styles for your display name or bio, where they work beautifully.</p>
+      </details>
+      <details class="border-2 border-[#500724] rounded-2xl bg-[#FDF2F8] px-5 py-4 sticker-xs">
+        <summary class="font-black cursor-pointer text-lg">Why do some fancy fonts show as boxes on my phone?</summary>
+        <p class="mt-2 font-medium text-[#500724]/80 leading-relaxed">Fancy text uses special Unicode characters (mathematical bold, script, double-struck alphabets), and very old phones or apps with limited font support may not include every character, showing an empty box instead. Stick to widely supported styles like bold, italic, and circled on older devices, and always preview a name in the actual app before setting it permanently.</p>
+      </details>
+      <details class="border-2 border-[#500724] rounded-2xl bg-[#FDF2F8] px-5 py-4 sticker-xs">
+        <summary class="font-black cursor-pointer text-lg">What is the difference between a nickname and a username?</summary>
+        <p class="mt-2 font-medium text-[#500724]/80 leading-relaxed">A username is your unique account handle — the string people use to find or tag you, governed by strict platform rules. A nickname (or display name) is the friendlier label shown next to it, usually with looser rules that allow spaces, emojis, and fancy Unicode. NameNova generates both: clean rule-abiding usernames via platform presets, and decorative display names via the Unicode style lab.</p>
+      </details>
+      <details class="border-2 border-[#500724] rounded-2xl bg-[#FDF2F8] px-5 py-4 sticker-xs">
+        <summary class="font-black cursor-pointer text-lg">How do I make a gaming name that nobody else has?</summary>
+        <p class="mt-2 font-medium text-[#500724]/80 leading-relaxed">Blend two words you like (shadow + wolf → ShadowWolf, Shalf, WolfShadow), add a meaningful number or suffix (_gg, 07, .exe), or generate from scratch with the random syllable engine. Decorative Unicode frames like ꧁༒…༒꧂ also make common words look unique in Free Fire and PUBG lobbies. Generate in batches of twenty so you have backups when your first choice is taken.</p>
+      </details>
+      <details class="border-2 border-[#500724] rounded-2xl bg-[#FDF2F8] px-5 py-4 sticker-xs">
+        <summary class="font-black cursor-pointer text-lg">Is NameNova really free? Do I need an account?</summary>
+        <p class="mt-2 font-medium text-[#500724]/80 leading-relaxed">Completely free, with no signup, no paywall, and no watermark on anything you copy. Your favorite names are saved in your own browser's local storage, so they stay private on your device. Generate and copy as many names as you like, as often as you like.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t-[3px] border-[#500724] bg-white mt-4">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#BE185D] text-white text-lg sticker-xs -rotate-6">✨</span>
+      <span class="text-xl font-black">Name<span class="text-[#BE185D]">Nova</span></span>
+    </div>
+    <p class="text-sm font-semibold text-[#500724]/60 text-center">Free stylish nicknames &amp; usernames for every platform. No signup, ever.</p>
+    <a href="https://fixoraa.tech" class="text-sm font-black px-4 py-2 rounded-full bg-[#FCE7F3] border-2 border-[#500724] sticker-xs hover:bg-[#F9A8D4] transition">More Tools →</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a nickname generator and how does NameNova work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A nickname generator creates stylish usernames and gamer tags from a keyword, two blended words, or completely from scratch. NameNova combines your input with curated word banks for five vibes (aesthetic, brutal, cyberpunk, cute, dark), applies real platform rules (like Instagram's letters-numbers-periods-underscores limit), and optionally decorates results with Unicode fancy text and symbols. Everything runs in your browser." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use these usernames on Instagram?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — switch on the Instagram preset and every generated name will only use letters, numbers, periods, and underscores, capped at 30 characters, which is exactly what Instagram allows. Instagram handles cannot use fancy Unicode fonts; save those styles for your display name or bio." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do some fancy fonts show as boxes on my phone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Fancy text uses special Unicode characters (mathematical bold, script, double-struck alphabets), and very old phones or apps with limited font support may not include every character, showing an empty box instead. Stick to widely supported styles like bold, italic, and circled on older devices, and always preview a name in the actual app first." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a nickname and a username?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A username is your unique account handle — the string people use to find or tag you, governed by strict platform rules. A nickname (or display name) is the friendlier label shown next to it, usually with looser rules that allow spaces, emojis, and fancy Unicode. NameNova generates both: clean rule-abiding usernames via platform presets, and decorative display names via the Unicode style lab." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I make a gaming name that nobody else has?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Blend two words you like (shadow + wolf → ShadowWolf, Shalf, WolfShadow), add a meaningful number or suffix (_gg, 07, .exe), or generate from scratch with the random syllable engine. Decorative Unicode frames also make common words look unique in Free Fire and PUBG lobbies. Generate in batches of twenty so you have backups when your first choice is taken." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is NameNova really free? Do I need an account?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Completely free, with no signup, no paywall, and no watermark on anything you copy. Your favorite names are saved in your own browser's local storage, so they stay private on your device. Generate and copy as many names as you like, as often as you like." }
+    }
+  ]
+}
+</script>
+
+<script>
+/* __PURE_START__ */
+'use strict';
+
+/* ---------- Unicode fancy-text mapping tables ---------- */
+function buildAlphabetMap(upperBase, lowerBase, upperHoles, lowerHoles, digitBase, digitHoles) {
+  var map = {}, i, ch;
+  for (i = 0; i < 26; i++) {
+    ch = String.fromCharCode(65 + i);
+    map[ch] = (upperHoles && upperHoles[i] !== undefined) ? upperHoles[i] : String.fromCodePoint(upperBase + i);
+  }
+  for (i = 0; i < 26; i++) {
+    ch = String.fromCharCode(97 + i);
+    map[ch] = (lowerHoles && lowerHoles[i] !== undefined) ? lowerHoles[i] : String.fromCodePoint(lowerBase + i);
+  }
+  if (digitBase !== null && digitBase !== undefined) {
+    for (i = 0; i < 10; i++) {
+      ch = String(i);
+      map[ch] = (digitHoles && digitHoles[i] !== undefined) ? digitHoles[i] : String.fromCodePoint(digitBase + i);
+    }
+  } else if (digitHoles) {
+    for (var k in digitHoles) { if (Object.prototype.hasOwnProperty.call(digitHoles, k)) map[k] = digitHoles[k]; }
+  }
+  return map;
+}
+
+var SMALL_CAPS_MAP = (function () {
+  var pairs = [['a','ᴀ'],['b','ʙ'],['c','ᴄ'],['d','ᴅ'],['e','ᴇ'],['f','ꜰ'],['g','ɢ'],['h','ʜ'],['i','ɪ'],['j','ᴊ'],['k','ᴋ'],['l','ʟ'],['m','ᴍ'],['n','ɴ'],['o','ᴏ'],['p','ᴘ'],['q','ǫ'],['r','ʀ'],['s','s'],['t','ᴛ'],['u','ᴜ'],['v','ᴠ'],['w','ᴡ'],['x','x'],['y','ʏ'],['z','ᴢ']];
+  var m = {}, i;
+  for (i = 0; i < pairs.length; i++) { m[pairs[i][0]] = pairs[i][1]; m[pairs[i][0].toUpperCase()] = pairs[i][1]; }
+  return m;
+})();
+
+var FLIP_MAP = {
+  a:'ɐ',b:'q',c:'ɔ',d:'p',e:'ǝ',f:'ɟ',g:'ƃ',h:'ɥ',i:'ı',j:'ɾ',k:'ʞ',l:'l',m:'ɯ',n:'u',o:'o',p:'d',q:'b',r:'ɹ',s:'s',t:'ʇ',u:'n',v:'ʌ',w:'ʍ',x:'x',y:'ʎ',z:'z',
+  A:'∀',B:'ᗺ',C:'Ɔ',D:'ᗡ',E:'Ǝ',F:'Ⅎ',G:'⅁',H:'H',I:'I',J:'ᒿ',K:'ʞ',L:'˥',M:'W',N:'N',O:'O',P:'Ԁ',Q:'Ό',R:'ᴚ',S:'S',T:'⊥',U:'∩',V:'Λ',W:'M',X:'X',Y:'⅄',Z:'Z',
+  '0':'0','1':'Ɩ','2':'ᘔ','3':'Ɛ','4':'ㄣ','5':'ϛ','6':'9','7':'ㄥ','8':'8','9':'6',
+  '!':'¡','?':'¿','.':'˙',',':"'",'_':'‾',' ':' '
+};
+
+var FANCY_STYLES = [
+  { id: 'bold',         label: 'Bold',          map: buildAlphabetMap(0x1D400, 0x1D41A, null, null, 0x1D7CE, null) },
+  { id: 'italic',       label: 'Italic',        map: buildAlphabetMap(0x1D434, 0x1D44E, null, null, null, null) },
+  { id: 'script',       label: 'Script',        map: buildAlphabetMap(0x1D49C, 0x1D4B6,
+      {1:'ℬ',4:'ℰ',5:'ℱ',7:'ℋ',8:'ℐ',11:'ℒ',12:'ℳ',17:'ℛ'},
+      {4:'ℯ',6:'ℊ',14:'ℴ'}, null, null) },
+  { id: 'doublestruck', label: 'Double-Struck', map: buildAlphabetMap(0x1D538, 0x1D552,
+      {2:'ℂ',7:'ℍ',13:'ℕ',15:'ℙ',16:'ℚ',17:'ℝ',25:'ℤ'},
+      null, 0x1D7D8, null) },
+  { id: 'circled',      label: 'Circled',       map: buildAlphabetMap(0x24B6, 0x24D0, null, null, null,
+      {'0':'⓪','1':'①','2':'②','3':'③','4':'④','5':'⑤','6':'⑥','7':'⑦','8':'⑧','9':'⑨'}) },
+  { id: 'fullwidth',    label: 'Full-Width',    map: buildAlphabetMap(0xFF21, 0xFF41, null, null, 0xFF10, null) },
+  { id: 'smallcaps',    label: 'Small Caps',    map: SMALL_CAPS_MAP },
+  { id: 'flipped',      label: 'Flipped',       map: FLIP_MAP, flipped: true }
+];
+
+function getFancyStyle(id) {
+  for (var i = 0; i < FANCY_STYLES.length; i++) if (FANCY_STYLES[i].id === id) return FANCY_STYLES[i];
+  return null;
+}
+
+function applyFancyStyle(styleId, text) {
+  var style = getFancyStyle(styleId);
+  if (!style || text === null || text === undefined) return text;
+  text = String(text);
+  var out = '', i, ch;
+  if (style.flipped) {
+    var chars = Array.from(text);
+    for (i = chars.length - 1; i >= 0; i--) {
+      ch = chars[i];
+      out += (style.map[ch] !== undefined) ? style.map[ch] : ch;
+    }
+    return out;
+  }
+  var cp = Array.from(text);
+  for (i = 0; i < cp.length; i++) {
+    ch = cp[i];
+    out += (style.map[ch] !== undefined) ? style.map[ch] : ch;
+  }
+  return out;
+}
+
+function decodeFancyStyle(styleId, text) {
+  var style = getFancyStyle(styleId);
+  if (!style || style.flipped || text === null || text === undefined) return text;
+  var inv = {}, k;
+  for (k in style.map) { if (Object.prototype.hasOwnProperty.call(style.map, k) && inv[style.map[k]] === undefined) inv[style.map[k]] = k; }
+  var out = '', i, cp = Array.from(String(text));
+  for (i = 0; i < cp.length; i++) out += (inv[cp[i]] !== undefined) ? inv[cp[i]] : cp[i];
+  return out;
+}
+
+/* ---------- Vibe word banks ---------- */
+var VIBES = {
+  aesthetic: {
+    label: 'Aesthetic',
+    prefixes: ['moon','velvet','cloud','petal','luna','mist','wisteria','opal'],
+    suffixes: ['tea','dreams','bloom','hours','milk','static','whispers'],
+    symbols: ['˚','✧','｡','♡','·'],
+    wrappers: [['˚₊·','·₊˚'],['·˚','˚·'],['｡･','･｡']]
+  },
+  brutal: {
+    label: 'Brutal',
+    prefixes: ['grim','savage','brutal','krush','blood','ravage','maul','wreck'],
+    suffixes: ['slayer','reaper','_x','_gg','mauler','fang'],
+    symbols: ['✖','☠','⚔','✚'],
+    wrappers: [['☠','☠'],['⚔','⚔']]
+  },
+  cyberpunk: {
+    label: 'Cyberpunk',
+    prefixes: ['neo','cyber','glitch','volt','pixel','nano','synth','zero'],
+    suffixes: ['exe','_2077','_ai','core','_net','prime'],
+    symbols: ['⚡','◤','◢','//'],
+    wrappers: [['//','//'],['◤','◢']]
+  },
+  cute: {
+    label: 'Cute',
+    prefixes: ['bunny','mochi','peachy','sugar','puff','berry','honey','taro'],
+    suffixes: ['pie','boo','_chan','paws','mallow','buns'],
+    symbols: ['♡','✿','˗ˏˋ','ˎˊ˗'],
+    wrappers: [['˗ˏˋ','ˎˊ˗'],['♡','♡']]
+  },
+  dark: {
+    label: 'Dark',
+    prefixes: ['void','shadow','eclipse','ghost','onyx','abyss','noct','wraith'],
+    suffixes: ['soul','_404','requiem','shade','_null','omen'],
+    symbols: ['☾','☽','✝','❖'],
+    wrappers: [['☾','☽'],['❖','❖']]
+  }
+};
+
+var SYLLABLE_BANKS = {
+  starts: ['vex','zor','nyx','kae','ryn','jax','zul','mir','tal','vex','ori','syl','dra','fen','kor'],
+  mids: ['a','e','i','o','ra','li','na','vo'],
+  ends: ['on','ix','ar','is','or','yn','ax','el','ia','os']
+};
+
+/* ---------- helpers ---------- */
+function capWord(s) {
+  s = String(s || '');
+  if (!s) return s;
+  return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+}
+function cleanKeyword(s) {
+  return String(s || '').trim().replace(/\s+/g, ' ').replace(/[^A-Za-z0-9 ]/g, '');
+}
+function randInt(rand, n) {
+  return Math.floor((rand || Math.random)() * n);
+}
+function pick(rand, arr) {
+  return arr[randInt(rand, arr.length)];
+}
+function clampCodepoints(s, max) {
+  var cp = Array.from(String(s));
+  return cp.length <= max ? String(s) : cp.slice(0, max).join('');
+}
+
+/* ---------- platform sanitizers ---------- */
+var PLATFORM_RULES = {
+  instagram: { label: 'Instagram', max: 30, note: 'Instagram handles: letters, numbers, periods & underscores only · max 30 characters.' },
+  tiktok:    { label: 'TikTok',    max: 24, note: 'TikTok handles: letters, numbers, periods & underscores only · max 24 characters.' },
+  discord:   { label: 'Discord',   max: 32, note: 'Discord usernames: 2–32 chars · lowercase letters, numbers, _ and . only.' },
+  gaming:    { label: 'Gaming / PUBG', max: 16, note: 'Gaming tags: short & punchy · letters, numbers, spaces, _ and - · max 16 characters.' },
+  freefire:  { label: 'Free Fire', max: 14, note: 'Free Fire loves decoration: fancy Unicode + symbols like ꧁༒ ☬ ★彡 · keep it short (14 chars).' }
+};
+
+function sanitizeInstagram(name) {
+  var s = String(name || '').toLowerCase().replace(/[^a-z0-9._]/g, '');
+  s = s.replace(/^[._]+/, '');
+  return clampCodepoints(s, 30);
+}
+function sanitizeTiktok(name) {
+  var s = String(name || '').toLowerCase().replace(/[^a-z0-9._]/g, '');
+  s = s.replace(/^[._]+/, '');
+  return clampCodepoints(s, 24);
+}
+function sanitizeDiscord(name) {
+  var s = String(name || '').toLowerCase().replace(/[^a-z0-9_.]/g, '');
+  s = s.replace(/^[_.]+/, '');
+  s = clampCodepoints(s, 32);
+  return s;
+}
+function sanitizeGaming(name) {
+  var s = String(name || '').replace(/[^A-Za-z0-9 _-]/g, '').trim().replace(/\s+/g, ' ');
+  return clampCodepoints(s, 16);
+}
+function sanitizeFreeFire(name) {
+  var s = String(name || '').replace(/[\u0000-\u001F\u007F]/g, '').trim();
+  return clampCodepoints(s, 14);
+}
+function instagramCheck(name) {
+  var cleaned = String(name || '').toLowerCase().replace(/[^a-z0-9._]/g, '').replace(/^[._]+/, '');
+  var len = Array.from(cleaned).length;
+  return { sanitized: clampCodepoints(cleaned, 30), length: len, max: 30, fits: len >= 1 && len <= 30 };
+}
+
+/* ---------- keyword combiner ---------- */
+function combineKeywords(a, b) {
+  a = cleanKeyword(a); b = cleanKeyword(b);
+  if (!a || !b) return [];
+  var A = capWord(a), B = capWord(b);
+  var out = [];
+  out.push(A + B);                       // ShadowWolf
+  out.push(B + A);                       // WolfShadow
+  out.push(capWord(a.slice(0, Math.ceil(a.length / 2)) + b.slice(Math.floor(b.length / 2)).toLowerCase())); // Shalf
+  out.push(capWord(b.slice(0, Math.ceil(b.length / 2)) + a.slice(Math.floor(a.length / 2)).toLowerCase())); // Wolfadow
+  out.push(A + '_' + B);
+  out.push(A + '.' + B);
+  out.push(A + 'x' + B);
+  out.push(A + B + '07');
+  return out;
+}
+
+/* ---------- vibe application ---------- */
+function applyVibe(name, vibeId, rand, platform) {
+  var vibe = VIBES[vibeId];
+  if (!vibe) return name;
+  var r = rand || Math.random;
+  var mode = randInt(r, 4);
+  var decorated = String(name);
+  if (platform === 'freefire' && randInt(r, 2) === 0 && vibe.wrappers.length) {
+    var w = pick(r, vibe.wrappers);
+    decorated = w[0] + decorated + w[1];
+  }
+  if (mode === 0) return pick(r, vibe.prefixes) + capWord(decorated.replace(/^[^A-Za-z0-9]*/, ''));
+  if (mode === 1) return decorated + pick(r, vibe.symbols);
+  if (mode === 2) return decorated + '_' + pick(r, vibe.suffixes);
+  return pick(r, vibe.symbols) + decorated;
+}
+
+/* ---------- platform finalization ---------- */
+function finalizeForPlatform(name, platform) {
+  var p = platform || 'gaming';
+  if (p === 'instagram') return sanitizeInstagram(name);
+  if (p === 'tiktok') return sanitizeTiktok(name);
+  if (p === 'discord') return sanitizeDiscord(name);
+  if (p === 'freefire') return sanitizeFreeFire(name);
+  return sanitizeGaming(name);
+}
+
+/* ---------- main generator ---------- */
+function generateNames(opts) {
+  opts = opts || {};
+  var mode = opts.mode || 'keyword';
+  var platform = opts.platform || 'gaming';
+  var vibeId = opts.vibe && opts.vibe !== 'any' ? opts.vibe : null;
+  var rand = opts.rand || Math.random;
+  var count = Math.max(1, Math.min(60, opts.count || 24));
+  var kw = cleanKeyword(opts.keyword);
+  var kw2 = cleanKeyword(opts.keyword2);
+  var results = [];
+
+  function pushRaw(s) {
+    if (s === null || s === undefined) return;
+    s = String(s).trim();
+    if (!s) return;
+    if (vibeId) s = applyVibe(s, vibeId, rand, platform);
+    s = finalizeForPlatform(s, platform);
+    if (s && results.indexOf(s) === -1) results.push(s);
+  }
+
+  if (mode === 'blend') {
+    if (!kw || !kw2) return [];
+    var combos = combineKeywords(kw, kw2);
+    var i, j;
+    for (i = 0; i < combos.length && results.length < count; i++) pushRaw(combos[i]);
+    // extra decorated spins on the combos
+    var guard = 0;
+    while (results.length < count && guard < 200) {
+      guard++;
+      var base = pick(rand, combos);
+      var spin = randInt(rand, 4);
+      if (spin === 0) pushRaw(base + randInt(rand, 100));
+      else if (spin === 1) pushRaw('xX_' + base + '_Xx');
+      else if (spin === 2 && platform === 'freefire') pushRaw('꧁༒' + base + '༒꧂');
+      else pushRaw(base + '_' + pick(rand, ['gg','hq','yt','tv']));
+    }
+    return results.slice(0, count);
+  }
+
+  if (mode === 'random') {
+    var guard2 = 0;
+    while (results.length < count && guard2 < 400) {
+      guard2++;
+      var nm = capWord(pick(rand, SYLLABLE_BANKS.starts) + pick(rand, SYLLABLE_BANKS.mids) + pick(rand, SYLLABLE_BANKS.ends));
+      if (platform === 'freefire' && randInt(rand, 3) === 0) nm = pick(rand, ['★彡','꧁','༒☬']) + nm + pick(rand, ['彡★','꧂','☬༒']);
+      if (randInt(rand, 4) === 0) nm += randInt(rand, 99);
+      pushRaw(nm);
+    }
+    return results.slice(0, count);
+  }
+
+  // keyword mode
+  if (!kw) return [];
+  var K = capWord(kw);
+  var seeds = [K, kw.toLowerCase(), K + randInt(rand, 100), 'xX_' + K + '_Xx', K + '_gg', K + '.exe',
+    'the' + K, K + 'hq', pick(rand, ['neo','vx','lil','big']) + K, K + pick(rand, ['07','99','24','x7'])];
+  if (platform === 'freefire') {
+    seeds.push('꧁༒' + K + '༒꧂', '★彡' + K + '彡★', '☬' + K + '☬', '『' + K + '』');
+  }
+  if (platform === 'gaming') {
+    seeds.push('[' + K.toUpperCase().slice(0, 4) + '] ' + K, K + ' ⚔');
+  }
+  var g = 0;
+  while (results.length < count && g < 400) {
+    g++;
+    var s0 = pick(rand, seeds);
+    var spin2 = randInt(rand, 5);
+    if (spin2 === 0) pushRaw(s0 + randInt(rand, 100));
+    else if (spin2 === 1 && platform === 'freefire') pushRaw(pick(rand, ['꧁','★彡','༒']) + s0 + pick(rand, ['꧂','彡★','༒']));
+    else pushRaw(s0);
+  }
+  return results.slice(0, count);
+}
+/* __PURE_END__ */
+
+/* ---------- UI wiring (browser only) ---------- */
+(function () {
+  var state = { mode: 'keyword', platform: 'instagram', vibe: 'any', lastResults: [] };
+  var $ = function (id) { return document.getElementById(id); };
+
+  var PLATFORM_NOTES = {
+    instagram: '📸 ' + PLATFORM_RULES.instagram.note,
+    tiktok: '🎵 ' + PLATFORM_RULES.tiktok.note,
+    discord: '💬 ' + PLATFORM_RULES.discord.note,
+    gaming: '🎮 ' + PLATFORM_RULES.gaming.note,
+    freefire: '🔥 ' + PLATFORM_RULES.freefire.note
+  };
+
+  function toast(msg) {
+    var t = document.createElement('div');
+    t.className = 'toast-pop fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] bg-[#500724] text-white text-sm font-black px-5 py-3 rounded-full border-2 border-white shadow-xl';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(function () { t.style.opacity = '0'; t.style.transition = 'opacity .3s'; }, 1400);
+    setTimeout(function () { t.remove(); }, 1800);
+  }
+
+  function copyText(text, label) {
+    function done() { toast('📋 Copied: ' + (label || text).slice(0, 28)); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text, done); });
+    } else {
+      fallbackCopy(text, done);
+    }
+  }
+  function fallbackCopy(text, done) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    done();
+  }
+
+  /* favorites (localStorage, guarded) */
+  var FAV_KEY = 'namenova-favs-v1';
+  function loadFavs() {
+    try {
+      var raw = localStorage.getItem(FAV_KEY);
+      var arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr.filter(function (x) { return typeof x === 'string'; }) : [];
+    } catch (e) { return []; }
+  }
+  function saveFavs(arr) {
+    try { localStorage.setItem(FAV_KEY, JSON.stringify(arr)); } catch (e) {}
+  }
+  function isFav(name) { return loadFavs().indexOf(name) !== -1; }
+  function toggleFav(name) {
+    var favs = loadFavs();
+    var i = favs.indexOf(name);
+    if (i === -1) { favs.unshift(name); toast('⭐ Saved to favorites'); }
+    else { favs.splice(i, 1); toast('Removed from favorites'); }
+    saveFavs(favs);
+    renderResults();
+    renderFavs();
+  }
+
+  function nameCard(name) {
+    var fav = isFav(name);
+    var card = document.createElement('div');
+    card.className = 'name-card bg-[#FDF2F8] border-2 border-[#500724] rounded-2xl p-4 sticker-xs flex items-center gap-3';
+    var len = Array.from(name).length;
+    card.innerHTML =
+      '<div class="flex-1 min-w-0">' +
+        '<div class="font-black text-lg truncate" title="' + name.replace(/"/g, '&quot;') + '">' + escapeHtml(name) + '</div>' +
+        '<div class="text-[11px] font-bold text-[#500724]/50">' + len + ' chars</div>' +
+      '</div>' +
+      '<button class="fav-btn shrink-0 w-9 h-9 rounded-full border-2 border-[#500724] ' + (fav ? 'bg-[#FEF3C7]' : 'bg-white') + ' text-lg leading-none" title="Save to favorites" aria-label="Save to favorites">' + (fav ? '⭐' : '☆') + '</button>' +
+      '<button class="copy-btn shrink-0 text-xs font-black bg-[#BE185D] text-white px-3 py-2 rounded-full border-2 border-[#500724]" title="Copy name">Copy</button>';
+    card.querySelector('.copy-btn').addEventListener('click', function () { copyText(name); });
+    card.querySelector('.fav-btn').addEventListener('click', function () { toggleFav(name); });
+    return card;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function renderResults() {
+    var grid = $('results-grid');
+    grid.innerHTML = '';
+    var list = state.lastResults;
+    $('empty-state').style.display = list.length ? 'none' : 'block';
+    $('copy-all-btn').classList.toggle('hidden', !list.length);
+    $('results-count').textContent = list.length ? '· ' + list.length + ' fresh' : '';
+    $('count-note').textContent = list.length ? 'Tap Copy on any card — or star it to keep it.' : '';
+    list.forEach(function (n) { grid.appendChild(nameCard(n)); });
+  }
+
+  function renderFavs() {
+    var favs = loadFavs();
+    var grid = $('favs-grid');
+    grid.innerHTML = '';
+    $('favs-empty').style.display = favs.length ? 'none' : 'block';
+    favs.forEach(function (n) {
+      var card = document.createElement('div');
+      card.className = 'bg-white/10 border-2 border-white/40 rounded-2xl p-4 flex items-center gap-3';
+      card.innerHTML =
+        '<div class="flex-1 min-w-0"><div class="font-black text-lg truncate text-white" title="' + n.replace(/"/g, '&quot;') + '">' + escapeHtml(n) + '</div></div>' +
+        '<button class="fcopy shrink-0 text-xs font-black bg-[#BE185D] text-white px-3 py-2 rounded-full border-2 border-white/60">Copy</button>' +
+        '<button class="frm shrink-0 w-9 h-9 rounded-full border-2 border-white/60 bg-white/10 text-white" title="Remove" aria-label="Remove favorite">✕</button>';
+      card.querySelector('.fcopy').addEventListener('click', function () { copyText(n); });
+      card.querySelector('.frm').addEventListener('click', function () { toggleFav(n); });
+      grid.appendChild(card);
+    });
+  }
+
+  function doGenerate() {
+    var kw = $('keyword').value, kw2 = $('keyword2').value;
+    if (state.mode !== 'random') {
+      if (!cleanKeyword(kw)) {
+        toast('🌸 Type a keyword first — or try 🎲 Random mode');
+        $('keyword').focus();
+        return;
+      }
+      if (state.mode === 'blend' && !cleanKeyword(kw2)) {
+        toast('💥 Add a second keyword to blend');
+        $('keyword2').focus();
+        return;
+      }
+    }
+    state.lastResults = generateNames({
+      mode: state.mode, keyword: kw, keyword2: kw2,
+      platform: state.platform, vibe: state.vibe, count: 24
+    });
+    renderResults();
+    if (!state.lastResults.length) toast('Hmm, nothing came out — try different words');
+  }
+
+  /* mode tabs */
+  document.querySelectorAll('.mode-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.mode-tab').forEach(function (b) {
+        b.classList.remove('pill-active'); b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('pill-active'); btn.setAttribute('aria-selected', 'true');
+      state.mode = btn.getAttribute('data-mode');
+      $('kw2-wrap').classList.toggle('hidden', state.mode !== 'blend');
+      $('kw1-wrap').classList.toggle('hidden', state.mode === 'random');
+      if (state.mode === 'random') { doGenerate(); }
+    });
+  });
+
+  /* platform pills */
+  document.querySelectorAll('.plat-pill').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.plat-pill').forEach(function (b) { b.classList.remove('pill-active'); });
+      btn.classList.add('pill-active');
+      state.platform = btn.getAttribute('data-platform');
+      $('platform-note').textContent = PLATFORM_NOTES[state.platform];
+      if (state.lastResults.length) doGenerate();
+    });
+  });
+
+  /* vibe pills */
+  document.querySelectorAll('.vibe-pill').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.vibe-pill').forEach(function (b) { b.classList.remove('pill-active'); });
+      btn.classList.add('pill-active');
+      state.vibe = btn.getAttribute('data-vibe');
+      if (state.lastResults.length) doGenerate();
+    });
+  });
+
+  $('generate-btn').addEventListener('click', doGenerate);
+  $('shuffle-btn').addEventListener('click', function () {
+    if (!state.lastResults.length && state.mode !== 'random') { doGenerate(); return; }
+    doGenerate();
+  });
+  $('keyword').addEventListener('keydown', function (e) { if (e.key === 'Enter') doGenerate(); });
+  $('keyword2').addEventListener('keydown', function (e) { if (e.key === 'Enter') doGenerate(); });
+  $('copy-all-btn').addEventListener('click', function () {
+    copyText(state.lastResults.join('\n'), state.lastResults.length + ' names');
+  });
+
+  /* fancy styles lab */
+  var FANCY_LABELS = { bold: '𝐁𝐨𝐥𝐝', italic: '𝘐𝘵𝘢𝘭𝘪𝘤', script: '𝓢𝓬𝓻𝓲𝓹𝓽', doublestruck: '𝔻𝕠𝕦𝕓𝕝𝕖', circled: 'Ⓒⓘⓡⓒⓛⓔⓓ', fullwidth: 'Ｆｕｌｌ', smallcaps: 'Sᴍᴀʟʟ ᴄᴀᴘs', flipped: 'pǝddıןℲ' };
+  var fancyCards = [];
+  function renderFancyLab() {
+    var grid = $('fancy-grid');
+    grid.innerHTML = '';
+    fancyCards = [];
+    var sample = $('fancy-input').value.trim() || 'NovaStar';
+    FANCY_STYLES.forEach(function (st, idx) {
+      var styled = applyFancyStyle(st.id, sample);
+      var card = document.createElement('div');
+      card.className = 'name-card bg-[#FDF2F8] border-2 border-[#500724] rounded-2xl p-4 sticker-xs flex items-center gap-3' + (idx % 2 ? ' rotate-[0.4deg]' : ' -rotate-[0.4deg]');
+      card.innerHTML =
+        '<div class="shrink-0 w-10 h-10 rounded-full bg-[#BE185D] text-white flex items-center justify-center font-black border-2 border-[#500724]">' + (idx + 1) + '</div>' +
+        '<div class="flex-1 min-w-0">' +
+          '<div class="text-[11px] font-black uppercase tracking-widest text-[#BE185D]">' + escapeHtml(st.label) + '</div>' +
+          '<div class="font-bold text-xl truncate" title="' + escapeHtml(styled) + '">' + escapeHtml(styled) + '</div>' +
+        '</div>' +
+        '<button class="fcopy shrink-0 text-xs font-black bg-[#BE185D] text-white px-3 py-2 rounded-full border-2 border-[#500724]">Copy</button>';
+      card.querySelector('.fcopy').addEventListener('click', function () { copyText(styled, st.label); });
+      grid.appendChild(card);
+      fancyCards.push({ id: st.id, el: card });
+    });
+  }
+  $('fancy-input').addEventListener('input', renderFancyLab);
+
+  /* init */
+  $('platform-note').textContent = PLATFORM_NOTES[state.platform];
+  renderFancyLab();
+  renderFavs();
+  renderResults();
+})();
+</script>
+</body>
+</html>
